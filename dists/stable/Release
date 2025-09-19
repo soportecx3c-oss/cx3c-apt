@@ -1,23 +1,17 @@
-Architectures: amd64
-Codename: stable
-Components: main
-Date: Fri, 19 Sep 2025 12:47:38 +0000
-Label: CX3C
-Origin: CX3C
-Suite: stable
+Date: Fri, 19 Sep 2025 12:52:52 +0000
 MD5Sum:
- d7238f59c9368f6b958cf4dcf940c893              132 Release
+ 2627e0d0feae39499aaf95122f086d07               38 Release
  33ae499ec70bed3cf2db3bc30f8b0a30              583 main/binary-amd64/Packages
- 6ca478a89e480eacf2955d73f71d2794              441 main/binary-amd64/Packages.gz
+ 34924ca9f258f192e82eb8d41b93abcb              441 main/binary-amd64/Packages.gz
 SHA1:
- d835654cde1784cfd286e8965ade2193a4dc8181              132 Release
+ 7a4fda7246ff199c82cb5cbb4391941315b0fb23               38 Release
  563cc31a51bba5ed2d984334ad0f31626747f9c4              583 main/binary-amd64/Packages
- 9d8eb1a23b794ce2258e605513adf9137ab93299              441 main/binary-amd64/Packages.gz
+ 1fea512258b2a26ad9d40b0c83e7784d4e818488              441 main/binary-amd64/Packages.gz
 SHA256:
- e63876414c6c1230e4c7728ed444a8e69504827227a9ab6e20819713a96e8fcf              132 Release
+ ad34f550b840d91d8a0b2307b3e10997e68cd933b0fe011a5718864f0ec7e64c               38 Release
  17594fd84d6dc8f2df26c3746c4489196d25711bdfad929583612019af215cd4              583 main/binary-amd64/Packages
- 9315ce95a49276698d58949eac0f2da63fdcec18a4a18da4e2a0a0ce8018257f              441 main/binary-amd64/Packages.gz
+ ed8de3e6cacdfde5e108aaeba03d86fdae1d33faa550493864c58632a853128c              441 main/binary-amd64/Packages.gz
 SHA512:
- 3cf52343012a5ff07116d89e2d812703219abe63a0d154171fc0e21886e356ab548409864f70426426362244baaf76d6c6a38a95aaaf06a0b5936d81faac2581              132 Release
+ bb51762688b4d76d7d9fb70039872db54252d86496f2aba0d511df9e9fc811ccfe8b63cb25747c4202e51f13bb80e6941e89b7d9c739fe1a238b5df652c61bb0               38 Release
  61b738213d9b344b8d7efee8573a99a25c901f4cc9174a2aafbc7f326376c15c49fb37d4479c4d2591c8998087bf525c0a8e9fde10eccf0339b41d31d6d79208              583 main/binary-amd64/Packages
- f60a83d370fdc00e864c6c726a4040723a1d6358ca475f79a03bfabd21cd46b9756e743e8ad85e87f1459694bc19f7fbb6ac8fcfc007ac9e1698942849a05893              441 main/binary-amd64/Packages.gz
+ ed57a3d2ef104496289566a98d067886f3a7ff59a1efecf7dc204578fe1b71a2cbafdaa2fee31e7eb0b1620376baa4168bda80a00b9a6e96ac2a700e50248350              441 main/binary-amd64/Packages.gz
