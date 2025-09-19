@@ -1,14 +1,14 @@
 Package: cx3c-tools
-Version: 0.1.0
+Version: 0.1.1
 Architecture: all
 Maintainer: Gilberto Novelo <gilberto.novelo@cx3c.com>
-Installed-Size: 10
+Installed-Size: 13
 Depends: bash, apt, debconf
-Filename: pool/main/cx3c-tools_0.1.0_all.deb
-Size: 1684
-MD5sum: 903503062559efce366b05d898ecf9b4
-SHA1: 0dbcc6f3345ba6919c823bbc59ee1311388adda4
-SHA256: d0f5af51892976b278f5181fc90749cecf80da76fd11586148afe2196e326608
+Filename: pool/main/cx3c-tools_0.1.1_all.deb
+Size: 2822
+MD5sum: c1c1bbdc1b4edc27ceaf628766521e38
+SHA1: 2c07c20061d049216f6b3aacaf0cb36576ce6648
+SHA256: 02d383885a64039f0bf9ab10defff2b75c34644e0a2282868f47b5d68142fed5
 Section: admin
 Priority: optional
 Description: CX3C tools for Ubuntu servers (updates, hardening helpers)
