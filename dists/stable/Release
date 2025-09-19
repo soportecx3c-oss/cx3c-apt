@@ -1,8 +1,17 @@
-Origin: CX3C
-Label: CX3C
-Suite: stable
-Codename: stable
-Architectures: amd64
-Components: main
-Date: Fri, 19 Sep 2025 12:18:01 +0000
-Acquire-By-Hash: no
+Date: Fri, 19 Sep 2025 12:25:35 +0000
+MD5Sum:
+ 4cf1da108e6b7ca3d8fe6bf9a9fe8809               38 Release
+ 6af16b6081669c8bd2f61ad75c0443fa              583 main/binary-amd64/Packages
+ faa6672dbb8fdca893e70473967889fb              441 main/binary-amd64/Packages.gz
+SHA1:
+ ab3960a435397dcf5c7cb7ee752a25bc6d90b160               38 Release
+ c4112169e3af851abb2a0b852962ac429b28c10a              583 main/binary-amd64/Packages
+ 8cdf645e2b0faf1ebee7b7ea343ec98bc26a7737              441 main/binary-amd64/Packages.gz
+SHA256:
+ 2a39daaf6312cfe62021a1552d838fa986c693153d0319374313a403e5acc056               38 Release
+ 6af39d9395aefce69d71ab0cdd4dafe8351a2e7e47a741e0ec2d124a27dc52a9              583 main/binary-amd64/Packages
+ 1f49094d561e84d04917eebf5c3b2f1b63442726c4290284e696c65bf83d342d              441 main/binary-amd64/Packages.gz
+SHA512:
+ 7d481376db7f52758bee7be65f49cd1b826ca9bc520b24e0acde0bcf7a914b17e6fc883e8f366de4359b71a28e97b59e1e1f246842587277776a57dfb8e35755               38 Release
+ 4050559d6546c885eb652e6a3845764bdbad92e5fffbd4e2a30e9d6a732b9a5a9ff6900532d6eea715f41bc598dd737c30c4c18e32d45c56959d8db6946be7c3              583 main/binary-amd64/Packages
+ 1141f1b7debe9ea9fd41b3c59c8be2e36867f6f37ac4e9fc2bef18bb5a12f3255b1b89be42f78d49a42a7eb2a7c12907e905c7e072de4abe33435a4b2e5450a1              441 main/binary-amd64/Packages.gz
