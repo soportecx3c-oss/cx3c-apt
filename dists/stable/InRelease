@@ -4,31 +4,31 @@ Hash: SHA512
 Architectures: amd64 all
 Codename: stable
 Components: main
-Date: Sat, 20 Sep 2025 02:25:16 +0000
+Date: Sat, 20 Sep 2025 02:25:52 +0000
 Description: CX3C APT repository
 Label: CX3C
 Origin: CX3C
 Suite: stable
 MD5Sum:
- a3f5efecd5127e4c9607db3b4e0c2480              169 Release
+ 347f0075c08eab03f1148b78f12de611              169 Release
  33ae499ec70bed3cf2db3bc30f8b0a30              583 main/binary-amd64/Packages
- 54bbca17fdc083b4f7b8d334b708b074              441 main/binary-amd64/Packages.gz
+ 496f50844c6f92f478e3cdbe3d50a657              441 main/binary-amd64/Packages.gz
 SHA1:
- 184b64e0711faf961b67c6fbf15dbb40d6c6596e              169 Release
+ 523888449daf3d76de5f5799aae61124b006a7fc              169 Release
  563cc31a51bba5ed2d984334ad0f31626747f9c4              583 main/binary-amd64/Packages
- d304dccda0d28252134cb024836213271d94e793              441 main/binary-amd64/Packages.gz
+ 2f63a6a0597ceae4623ceecc954ebb8f57adfbcd              441 main/binary-amd64/Packages.gz
 SHA256:
- f1ca93e1a588314033a5d6809a3a898b05b56586a4e1defc347f5f1a7557e3f3              169 Release
+ 614b7ac43cb72e1494c152290b99b34359303c620fb4c539a89f56969b41d229              169 Release
  17594fd84d6dc8f2df26c3746c4489196d25711bdfad929583612019af215cd4              583 main/binary-amd64/Packages
- 4a51f5590e85c5f70dacbe03aef1ff0086f99abacdc820a976592b43843f8536              441 main/binary-amd64/Packages.gz
+ 8a8ba1172363f8f380bda82f3c882d38e80f0413ae4e693b8612be6fe0600522              441 main/binary-amd64/Packages.gz
 SHA512:
- bdb255eeae95a822a4d2de857c11ece972c95210141808376243e81abcb15dd3be52ac8993459038960b41d50cfbc76da3f10e8ce91ddf5d63ebc81736c220e1              169 Release
+ e1b1f16a2ab3f9875e73ecc2e6d45700df62fecd8d6e35d67ce1d5303ecb2833b6cb42913891a5b96a8e89956833b59da2cbdb9238eda7e55b51c5b257a4c9fc              169 Release
  61b738213d9b344b8d7efee8573a99a25c901f4cc9174a2aafbc7f326376c15c49fb37d4479c4d2591c8998087bf525c0a8e9fde10eccf0339b41d31d6d79208              583 main/binary-amd64/Packages
- db1669a07807e0bf06d029ba0e236401a6a787c2431e216e1ece494cbdcbb3636ff1f1ec47dfeb234d4c9d9ba4e8688918fea4a4e4ba13843868c094de469ac5              441 main/binary-amd64/Packages.gz
+ 767b1a42035af241519552bd8b5bdae36b664be663af156680d00c8f8a886ff591948979f2a901f3cc5f1b4d95168f1d2920c0e819db484678e1fd8925e024df              441 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaM4QjAAKCRAa94K9aTl3
-9IG2AP9bBI2L+GGihGl3/jM7E8Yr2qa26/UpmkjKeGVlol8OggEArZnypAhXpcjh
-MrSxINvOSX/+iKqs24ISDxgeFDHongg=
-=as/U
+iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaM4QsAAKCRAa94K9aTl3
+9DoMAP9WPFfFiWPp99fWAYv9d4KgjfOz3xmmdt1jc5NHFArtAgD/UWO8WmRSRANb
+z9qIVMPtWlweJS6Wqajq+logO000uwA=
+=Gh0Q
 -----END PGP SIGNATURE-----
