@@ -1,16 +1,36 @@
-Package: cx3c-tools
-Version: 0.1.3
+Package: cx3c-pve-tools
 Architecture: all
-Maintainer: Gilberto Novelo <gilberto.novelo@cx3c.com>
-Installed-Size: 18
-Depends: bash, apt, debconf
-Filename: pool/main/cx3c-tools_0.1.3_all.deb
-Size: 4904
-MD5sum: 1c50a95db965328c7a8b34ac8f9794a1
-SHA1: 2f0fd6ed292d5d210b44c16d50f20a7d12cc5cdf
-SHA256: 21c07ef7a332235fd343d97961b87633a32aeb04023ead3a45f3850334bd0e1f
-Section: admin
+Version: 0.1.0
 Priority: optional
+Section: admin
+Maintainer: CX3C APT Repo <repo@cx3c.com>
+Installed-Size: 13
+Depends: bash, apt
+Filename: pool/main/cx3c-pve-tools/cx3c-pve-tools_0.1.0_all.deb
+Size: 2722
+MD5sum: 0eaf007f1986c0fb7d9f9271556c86b4
+SHA1: 97bd0177e4a5fa7bd4826a55747a7d308d62be13
+SHA256: 701cd36f79a07a5def3b99591a0f17325af0bb155794869671f6410d8f761cdc
+SHA512: d86e37a0ea97d6897bef6d35073f40cb64b33b69e1ba66494133ea2154717890e714d0824e13df3bd5c86baf5802c63315a468e0606dcac65e078a2b8e9bda10
+Homepage: https://soportecx3c-oss.github.io/cx3c-apt
+Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
+ Comandos operativos para nodos PVE y derivados. Incluye:
+  - pve-full-upgrade-cx3c: actualización completa no interactiva.
+
+Package: cx3c-tools
+Architecture: all
+Version: 0.1.0
+Priority: optional
+Section: admin
+Maintainer: Gilberto Novelo <gilberto.novelo@cx3c.com>
+Installed-Size: 10
+Depends: bash, apt, debconf
+Filename: pool/main/cx3c-tools_0.1.0_all.deb
+Size: 1684
+MD5sum: 903503062559efce366b05d898ecf9b4
+SHA1: 0dbcc6f3345ba6919c823bbc59ee1311388adda4
+SHA256: d0f5af51892976b278f5181fc90749cecf80da76fd11586148afe2196e326608
+SHA512: b7f508dbe438db70afb7f5ea7f998824f8cb45cf2358350db90f1fed5e8be2149e39c06ef62474e3d42ae422120f959904f21b60fb93a7e0b8108ebfc8676246
 Description: CX3C tools for Ubuntu servers (updates, hardening helpers)
  Custom CLI tools for lab/servers by CX3C.
  Includes: full-upgrade-cx3c (non-interactive safe updater).
