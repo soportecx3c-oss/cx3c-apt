@@ -17,6 +17,25 @@ Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
  Comandos operativos para nodos PVE y derivados. Incluye:
   - pve-full-upgrade-cx3c: actualización completa no interactiva.
 
+Package: cx3c-pve-tools
+Architecture: all
+Version: 0.2.0
+Priority: optional
+Section: admin
+Maintainer: CX3C APT Repo <repo@cx3c.com>
+Installed-Size: 17
+Depends: bash, apt
+Filename: pool/main/cx3c-pve-tools/cx3c-pve-tools_0.2.0_all.deb
+Size: 4126
+MD5sum: 10ffb8c0c01439bdad141c0713c14dd4
+SHA1: 9caacf4f7460db2ea5df7a1191eabfb21287032a
+SHA256: 15e124d7e26d1a89ead05df97abee5cf16e7f43b420051af456f4895760c4115
+SHA512: d06488b1d91a8381f3fa6dafa3d02fcdf7f281630c0f6ca3cdc7d111143f80699a6390a23d6f65302e968524dc2f9d110ec7896c792741c50b9c6b54fda0dc8a
+Homepage: https://soportecx3c-oss.github.io/cx3c-apt
+Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
+ Comandos operativos para nodos PVE y derivados. Incluye:
+  - pve-full-upgrade-cx3c: actualización completa no interactiva.
+
 Package: cx3c-tools
 Architecture: all
 Version: 0.1.0
