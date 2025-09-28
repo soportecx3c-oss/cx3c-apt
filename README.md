@@ -100,3 +100,28 @@ sudo rm -f /etc/apt/sources.list.d/cx3c.list /etc/apt/keyrings/cx3c.gpg
 sudo rm -f /var/lib/apt/lists/*soportecx3c-oss* /var/lib/apt/lists/partial/*soportecx3c-oss* 2>/dev/null || true
 sudo apt update
 ```
+
+---
+
+## Instalación de **cx3c-pve-tools** en Proxmox
+
+En un nodo **Proxmox VE** (o Debian/Ubuntu compatible):
+
+```bash
+# 1) Agregar el repositorio CX3C (si no lo tienes aún)
+curl -fsSL https://soportecx3c-oss.github.io/cx3c-apt/scripts/install-cx3c-repo.sh | bash
+
+# 2) Actualizar índices
+sudo apt update
+
+# 3) Instalar el paquete de utilidades para Proxmox
+sudo apt install -y cx3c-pve-tools
+
+# 4) Verificar que el comando quedó disponible e iniciar actualización
+which pve-full-upgrade-cx3c
+pve-full-upgrade-cx3c
+```
+
+> `pve-full-upgrade-cx3c` realiza una actualización completa no interactiva y muestra logs claros.  
+> Requiere privilegios de administrador (root o sudo).
+
