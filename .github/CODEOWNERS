@@ -1,0 +1,6 @@
+# CODEOWNERS para repo público APT
+# Formato: patrón   @equipo @usuario
+*       @soportecx3c-oss/owners  @soportecx3c-oss/devops
+scripts/*   @soportecx3c-oss/devops
+dists/*     @soportecx3c-oss/devops
+pool/*      @soportecx3c-oss/devops
