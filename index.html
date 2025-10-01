@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CX3C APT Repository</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f9fafb; color: #111827; }
+    h1 { color: #0f766e; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    code, pre { background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Repositorio APT — CX3C</h1>
+  <div class="card">
+    <h2>Instalación rápida</h2>
+    <pre><code>curl -fsSL https://soportecx3c-oss.github.io/cx3c-apt/scripts/install-cx3c-repo.sh | bash</code></pre>
+    <p>Guía para clientes: <a href="README_INSTALL.txt">README_INSTALL.txt</a></p>
+  </div>
+
+  <div class="card">
+    <h2>Scripts</h2>
+    <ul>
+      <li><a href="scripts/install-cx3c-repo.sh">scripts/install-cx3c-repo.sh</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Llaves GPG</h2>
+    <ul>
+      <li><a href="keyring/cx3c.asc">keyring/cx3c.asc</a> (ASCII)</li>
+      <li><a href="keyring/cx3c.gpg">keyring/cx3c.gpg</a> (keyring)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Metadatos APT</h2>
+    <ul>
+      <li><a href="dists/stable/InRelease">dists/stable/InRelease</a></li>
+      <li><a href="dists/stable/Release">dists/stable/Release</a></li>
+      <li><a href="dists/stable/main/binary-all/Packages.gz">dists/stable/main/binary-all/Packages.gz</a></li>
+      <li><a href="dists/stable/main/binary-amd64/Packages.gz">dists/stable/main/binary-amd64/Packages.gz</a></li>
+    </ul>
+  </div>
+
+  <p style="opacity:.7">Firmado con KEYID: <code>FB228B7C557103C091F6B254AF60143310F741D2</code></p>
+</body>
+</html>
