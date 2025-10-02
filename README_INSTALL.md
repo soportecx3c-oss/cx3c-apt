@@ -41,7 +41,7 @@ sudo apt-get install -y cx3c-pve-tools
 ## Reparaciones recurrentes
 
 ### 1. Error de NO_PUBKEY
-sudo curl -fsSL https://soportecx3c-oss.github.io/cx3c-apt/keyring/cx3c.asc | sudo gpg --dearmor -o /etc/apt/keyrings/cx3c.gpg
+sudo curl -fsSL https://soportecx3c-oss.github.io/cx3c-apt/keyring/cx3c.asc | sudo gpg --dearmor -o /etc/apt/keyrings/cx3c.gpg |
 sudo apt-get update
 
 ### 2. Cambios en Origin/Label/Codename
