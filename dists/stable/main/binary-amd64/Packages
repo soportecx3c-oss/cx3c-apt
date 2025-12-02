@@ -1,3 +1,19 @@
+Package: apdr-cx3c
+Architecture: all
+Version: 0.9.1
+Priority: optional
+Section: admin
+Maintainer: Soporte CX3C <soportecx3c@example.com>
+Depends: python3 (>= 3.8), python3-venv, ca-certificates
+Filename: pool/main/apdr-cx3c_0.9.1_all.deb
+Size: 191698
+MD5sum: 6e4fcde3ef66dac3c1ed68022bbe9ac4
+SHA1: 4a0e734c970dd41807eb5f8169a7d670edd3af1c
+SHA256: 021f0311d1170c1a8ad5fce4ae37a371e9acc6d6f3117b09ff9ec104ffeabcd6
+SHA512: 3c6d0ecfae2a481b672bd716565627e81e9d3eca98ac488df1de5d37a382b8482be5ea0de8fb5bd1701793d88297a852a9db733645bc7a0f01ea3824b832ed61
+Description: APDR-CX3C MDR automation daemon (TheHive, Cortex, MISP, Wazuh)
+ MDR automation daemon integrating TheHive, Cortex, MISP and Wazuh for sovereign SOAR/MDR workflows.
+
 Package: cx3c-pve-tools
 Architecture: all
 Version: 0.1.0
