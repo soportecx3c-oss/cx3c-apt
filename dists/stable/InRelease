@@ -4,39 +4,39 @@ Hash: SHA512
 Architectures: amd64 all
 Codename: stable
 Components: main
-Date: Sat, 17 Jan 2026 22:10:28 +0000
+Date: Sat, 17 Jan 2026 22:13:38 +0000
 Description: Repositorio de herramientas CX3C
 Label: CX3C Repository
 Origin: Soporte CX3C
 Suite: stable
 MD5Sum:
- a35e3fb89d2dea82f524872ac288e55a              201 Release
+ dc8c1bdbbc53b12c1e242ac81eddb454              201 Release
  bcff8219ed2031adf7b35b2ec12ef2a9             3072 main/binary-all/Packages
  c588c4473f4522b4ff7f38cd1f1357f5             1267 main/binary-all/Packages.gz
- 6d6cfa161e64cc54d71b6006fd44d8cc             1730 main/binary-amd64/Packages
- f49826ecbbef1508a1e45658bb922366              964 main/binary-amd64/Packages.gz
+ c4babf5c2c69abf1998cff6d85b5eb7f             1729 main/binary-amd64/Packages
+ 2ebc1bbc313825a3d1dd89a319c7dfe0              964 main/binary-amd64/Packages.gz
 SHA1:
- 7339b4ab03cb0afc659341df2de6061b38895f07              201 Release
+ 1747f841691dd1b504baec270ebd58410dc9fedc              201 Release
  e494d7465af21152b36005ee7982d2e9ac0754a9             3072 main/binary-all/Packages
  a86a4c268739023f1680078f05e32970ebe1b299             1267 main/binary-all/Packages.gz
- 92e8e10dc15f7d0667adf4e2d66a8200f10b771e             1730 main/binary-amd64/Packages
- 8d2a8fd0a86db715542a41e21ebb9a76330fdc2b              964 main/binary-amd64/Packages.gz
+ 0f75a2fdcc7f107612e8b6a9e3d799547e05801b             1729 main/binary-amd64/Packages
+ 90edb54fce853c87d040c8af96dabfa8b39f5400              964 main/binary-amd64/Packages.gz
 SHA256:
- 0355cfd693391d7caa9ebf44b28eb9fb1800d3052d560fc5169dfa5525a9eb2d              201 Release
+ 1196beb4e52b61ec2e75595fed7e1e8ac748af31615a6662b3e83d9e64fb279d              201 Release
  b7dbcfde79a18bb77e62b18c3ac1c5405c783c0f8f037262fda1011d97517dec             3072 main/binary-all/Packages
  80b359a33fe9ad0afc652cee28c274437dc9ca22ea517f35e584dedea6e1624d             1267 main/binary-all/Packages.gz
- f66bfdcb558f3202ea96c0a9d1f6b8ae0151a03bf171280f47d3f3ca5b1efe4f             1730 main/binary-amd64/Packages
- 7400d26dfc8d54ff4be0bea0a4547604639d8eb88cd1daae45c1bb5af066646b              964 main/binary-amd64/Packages.gz
+ 7e97fca8c41f7aa82be52340955eaef0d99aab5fe120e306b9b8415cee9baf50             1729 main/binary-amd64/Packages
+ 05559dfa7cbd17089e33bc010f303f783b87b898cb2cd02585d09bb3560413b0              964 main/binary-amd64/Packages.gz
 SHA512:
- 778a217770b9e00f042a5a788e42048ccef97086fc91cc6d32b96a95a34a726de0187ee84bf9b62350e14c3cfd0d7ce730920916ee76a614a51efc62be657404              201 Release
+ 478e44e800ee2d4e0497f38452bf2cc5e022350b8a02e1f34c877a40d29f96c7f2815a38e34719608ad7717cc23b16cb0e055595c5ee4043d0a46a15efd19555              201 Release
  8917865460160d3e240cd5a6f68d3106da851fae3949d0833f1892d8102903b9eec0c09d318a18949b504d0f96d1fa09b3e73286b6dd2683d25bae3680df844f             3072 main/binary-all/Packages
  34d16bba45ce89e46d5fc600a6e80e335fdaaae6600235d3dee657fc42d09d1af8b96211bda5fabc44e750148b1125104a372858c236d3302580fcbb2b6b35bb             1267 main/binary-all/Packages.gz
- 4ee94a74297671cc03a0f3d3c472037e4f85fec6bc9dc3538f9be7640b83654c5e92946cac91ad1828f680eaafec9a71d71eb03fda5ae64b386dbf8d5bc57085             1730 main/binary-amd64/Packages
- 54f63ebdfc15e99a23c586e5ba2a389ff685e8b9fd3351f1fa1bb63afd7ab865111b9733092cabc85d460dc2c25b6b55a22395a91818ac8e07d2b05b1ae8affb              964 main/binary-amd64/Packages.gz
+ 1cda97f56e8b5b2a5dba6de97ea5009a23c65cc6af2b885969dd44e99815da0ff13c4b35bfcb36f90496ae533c9da4dfb81d328064d2f498842e4a6007bc78fc             1729 main/binary-amd64/Packages
+ 2941a520a0196ace2a3d7f4b0616fdae0ccda6beb2ec96eba2ae4d03b7e48b6b0f454a07a3fcefcdd2de0354cdf3f0538b17346cda6b9634be2d72eda3ea4dfe              964 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaWwI4wAKCRAa94K9aTl3
-9PmbAQDhWbepIz/QtcZIjcBtlfr8N4G/8iqcUwhMNwRPe4UrKwEAzxE5Vg4F2q7/
-XAJei90v1PtlZvrRUwmCuDrANWRykQI=
-=evw1
+iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaWwJkgAKCRAa94K9aTl3
+9BF6AQCz0S2KsHxaHdd+lZZCzphc5j8bda70g3qMPJb4L5u+HgD/ahJbsP271Uzs
+DVGMK6yziAsuCgZQRyQwQuEgSCzrSgs=
+=R/dX
 -----END PGP SIGNATURE-----

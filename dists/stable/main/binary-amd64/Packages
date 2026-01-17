@@ -36,10 +36,10 @@ Version: 0.1.8.4
 Architecture: all
 Maintainer: Soporte CX3C <soporte@cx3c.com>
 Filename: pool/main/cx3c-tools_0.1.8.4_all.deb
-Size: 38182
-MD5sum: 09c570fb609404a2150972567a9c51f9
-SHA1: 09d0e0d01efdd8de96fb759f79cfe898d91c9e31
-SHA256: d6f0b060f4095e824b943e60770e3960e236e764c02d8ca48df961701ae9d50e
+Size: 2164
+MD5sum: 3f8f9bbc299da9da565ff98497b6e1ed
+SHA1: 8855c21f1f54d025377be0ed0a911d68b0c37c02
+SHA256: b9e47280115eb93b767c1b68cbbfac0477726db338d16ef8fb24a9711ac16d9b
 Section: utils
 Priority: optional
 Description: Herramientas de gestion y seguridad para servidores CX3C.
