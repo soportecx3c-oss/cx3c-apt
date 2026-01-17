@@ -32,14 +32,14 @@ Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
   - pve-full-upgrade-cx3c: actualización completa no interactiva.
 
 Package: cx3c-tools
-Version: 0.1.8
+Version: 0.1.8.1
 Architecture: all
 Maintainer: Soporte CX3C <soporte@cx3c.com>
-Filename: pool/main/cx3c-tools_0.1.8_all.deb
-Size: 41114
-MD5sum: f8fb28e9e294ffc0c915c8463f9b16f4
-SHA1: 480be134217aaed0cfaab63c00f67f2b67a6ee3b
-SHA256: 7af681c843bbfc641204da33434ec1f86d3f64ee97643266b0e37331509567d6
+Filename: pool/main/cx3c-tools_0.1.8.1_all.deb
+Size: 40958
+MD5sum: ba45881905ca973dceafd72cf406a7eb
+SHA1: 7feb9d307a0f41d20d89764d3126958cab43fa42
+SHA256: a89e03532ad473791fd2a9b2a859c3ddcce9384b7db15a17377570ce3b87dc58
 Section: utils
 Priority: optional
 Description: Herramientas de gestion y seguridad para servidores CX3C.
