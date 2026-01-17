@@ -1,35 +1,42 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Date: Sat, 17 Jan 2026 19:31:05 +0000
+Architectures: amd64 all
+Codename: stable
+Components: main
+Date: Sat, 17 Jan 2026 19:39:28 +0000
+Description: Repositorio de herramientas CX3C
+Label: CX3C Repository
+Origin: Soporte CX3C
+Suite: stable
 MD5Sum:
- 8faad1de53025176a6061c073bb9a1e5               38 Release
+ b48e2b1947984d7e8d592451d9a26c22              201 Release
  bcff8219ed2031adf7b35b2ec12ef2a9             3072 main/binary-all/Packages
  c588c4473f4522b4ff7f38cd1f1357f5             1267 main/binary-all/Packages.gz
  96a49b627551f933b828071052741825             1645 main/binary-amd64/Packages
  ea1e475dd829df1bdb425377398c419c              913 main/binary-amd64/Packages.gz
 SHA1:
- a176ed37e27b6b1bd128085d93ca44a0101ce41c               38 Release
+ 13cbbab3a380aa26ae88755acaab7e8399dcc781              201 Release
  e494d7465af21152b36005ee7982d2e9ac0754a9             3072 main/binary-all/Packages
  a86a4c268739023f1680078f05e32970ebe1b299             1267 main/binary-all/Packages.gz
  5e099a85da1728190203496b33645d9a2fd4fbec             1645 main/binary-amd64/Packages
  58ecc1a6488184cd4d54b5cfe9efebe07d647d80              913 main/binary-amd64/Packages.gz
 SHA256:
- d0c8b65f61447cf3a71538326cfe578f33e5424bbf30bd558440c9af80a80839               38 Release
+ ec27661a1212422a4277de99ec2097784aa578c8c40cf445ef04e6b0dae93210              201 Release
  b7dbcfde79a18bb77e62b18c3ac1c5405c783c0f8f037262fda1011d97517dec             3072 main/binary-all/Packages
  80b359a33fe9ad0afc652cee28c274437dc9ca22ea517f35e584dedea6e1624d             1267 main/binary-all/Packages.gz
  6dc2cf3d58d775eb62e518c8a0976a528e02878a1d55f703b582b2e6e02985f7             1645 main/binary-amd64/Packages
  629c8bf04aa6b69c3ae232560122e2c5d98746a2579b36357e02aa830c8c118b              913 main/binary-amd64/Packages.gz
 SHA512:
- d3532b69913bc60de138a1927972c97ddecf65e8553fae3ba7836c50232110b71d2a51c4bb85be9c4515103c7fd04769b5d2a68cfe6dc9e9c0634a5130d7c84e               38 Release
+ 1489042f6cf6ad4bab30cbc399a8ed47e12214956e5e4c461df87bbd7531281d089839ed29cc9fb1b92b73a0ba83ae428a15ac4c3261e46f9aea84e018955b89              201 Release
  8917865460160d3e240cd5a6f68d3106da851fae3949d0833f1892d8102903b9eec0c09d318a18949b504d0f96d1fa09b3e73286b6dd2683d25bae3680df844f             3072 main/binary-all/Packages
  34d16bba45ce89e46d5fc600a6e80e335fdaaae6600235d3dee657fc42d09d1af8b96211bda5fabc44e750148b1125104a372858c236d3302580fcbb2b6b35bb             1267 main/binary-all/Packages.gz
  1a874d0568bb61eb5984dd72a09e4f568b24b5968b41c676299f431dc31b3375da9940e2980c13cf98b2ae2683c5418e674c6f650e1ac17b79abc3353491200e             1645 main/binary-amd64/Packages
  5c8bbd4377938189a73b763fc391a902e77cfb007626849f0026ff8372d533a00bd72a588a418b49d9f7ded3dd9c00645f601144325021a673fd13ffbd53fddc              913 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaWvjhQAKCRAa94K9aTl3
-9GvtAQDj8B16ltvttsMJc1fhPe40K1kvo4ujv7c0mIsYRV+KwgEAtUxiWbnKyaeq
-f7HGwafuHKpiMJYYG88R5sNZv5YHCQU=
-=FhvP
+iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaWvlkwAKCRAa94K9aTl3
+9LXdAP9Zr77qsuLZxf8hh1UXWRwT6UXV2M6eqsLwVe2KRs3v3AEAwOgqWlNktxFK
+O4FjpeNcNCJuYfCbmntCBS+ackcF2AU=
+=I7CU
 -----END PGP SIGNATURE-----
