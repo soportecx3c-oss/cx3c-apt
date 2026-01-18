@@ -3,12 +3,14 @@ REPO_TEMP="/tmp/cx3c-repo"
 rm -rf $REPO_TEMP
 git clone https://github.com/soportecx3c-oss/cx3c-apt.git $REPO_TEMP
 
+echo "[+] Sincronizando ossec.conf principal..."
+cp -f $REPO_TEMP/configs/wazuh/etc/ossec.conf /var/ossec/etc/ossec.conf
+
 echo "[+] Sincronizando Reglas y Decodificadores..."
 cp -rf $REPO_TEMP/configs/wazuh/etc/rules/*.xml /var/ossec/etc/rules/ 2>/dev/null
 cp -rf $REPO_TEMP/configs/wazuh/etc/decoders/*.xml /var/ossec/etc/decoders/ 2>/dev/null
 
 echo "[+] Sincronizando Grupos Shared (Recursivo)..."
-# Usamos un método que garantiza la copia de subcarpetas
 find $REPO_TEMP/configs/wazuh/etc/shared/ -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} /var/ossec/etc/shared/ \;
 
 echo "[+] Reiniciando Wazuh..."
