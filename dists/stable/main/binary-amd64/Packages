@@ -188,3 +188,21 @@ Description: Herramientas integrales de mantenimiento CX3C.
   - vm-trim-cx3c: Limpieza y optimizacion de espacio en disco.
   - wazuh-update-cx3c: Sincronizacion GitOps de configuracion Wazuh.
 
+Package: tools-cx3c
+Version: 1.1.2
+Architecture: all
+Maintainer: CX3C Support <soporte@cx3c.com>
+Filename: pool/main/tools-cx3c/tools-cx3c_1.1.2_all.deb
+Size: 7274
+MD5sum: fcef8bbfdc663c4dd206da1b9c590511
+SHA1: e1460c6e74497d1192a52594196c695dafa8b6a2
+SHA256: fccef3256d409761a9a0b0ec6d8be1c736751dcac21d8272f0a2624ccd11be6d
+Section: custom
+Priority: optional
+Description: Herramientas integrales de mantenimiento CX3C.
+ Comandos incluidos:
+  - hard-users-cx3c: Hardening de usuarios/SSH (solo llave, policy 20+).
+  - full-upgrade-cx3c: Normalizacion de usuarios y sistema.
+  - vm-trim-cx3c: Limpieza y optimizacion de espacio en disco.
+  - wazuh-update-cx3c: Sincronizacion GitOps de configuracion Wazuh.
+
