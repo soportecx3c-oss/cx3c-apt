@@ -14,6 +14,42 @@ Description: APDR-CX3C MDR automation daemon (TheHive, Cortex, MISP, Wazuh)
  MDR automation daemon integrating TheHive, Cortex, MISP and Wazuh for sovereign SOAR/MDR workflows.
 
 Package: cx3c-pve-tools
+Version: 0.1.0
+Architecture: all
+Maintainer: CX3C APT Repo <repo@cx3c.com>
+Installed-Size: 13
+Depends: bash, apt
+Filename: pool/main/cx3c-pve-tools/cx3c-pve-tools_0.1.0_all.deb
+Size: 2722
+MD5sum: 0eaf007f1986c0fb7d9f9271556c86b4
+SHA1: 97bd0177e4a5fa7bd4826a55747a7d308d62be13
+SHA256: 701cd36f79a07a5def3b99591a0f17325af0bb155794869671f6410d8f761cdc
+Section: admin
+Priority: optional
+Homepage: https://soportecx3c-oss.github.io/cx3c-apt
+Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
+ Comandos operativos para nodos PVE y derivados. Incluye:
+  - pve-full-upgrade-cx3c: actualización completa no interactiva.
+
+Package: cx3c-pve-tools
+Version: 0.2.0
+Architecture: all
+Maintainer: CX3C APT Repo <repo@cx3c.com>
+Installed-Size: 17
+Depends: bash, apt
+Filename: pool/main/cx3c-pve-tools/cx3c-pve-tools_0.2.0_all.deb
+Size: 4126
+MD5sum: 10ffb8c0c01439bdad141c0713c14dd4
+SHA1: 9caacf4f7460db2ea5df7a1191eabfb21287032a
+SHA256: 15e124d7e26d1a89ead05df97abee5cf16e7f43b420051af456f4895760c4115
+Section: admin
+Priority: optional
+Homepage: https://soportecx3c-oss.github.io/cx3c-apt
+Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
+ Comandos operativos para nodos PVE y derivados. Incluye:
+  - pve-full-upgrade-cx3c: actualización completa no interactiva.
+
+Package: cx3c-pve-tools
 Version: 0.2.1
 Architecture: all
 Maintainer: CX3C APT Repo <repo@cx3c.com>
@@ -32,6 +68,95 @@ Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
   - pve-full-upgrade-cx3c: actualización completa no interactiva.
 
 Package: cx3c-tools
+Version: 0.1.0
+Architecture: all
+Maintainer: Gilberto Novelo <gilberto.novelo@cx3c.com>
+Installed-Size: 10
+Depends: bash, apt, debconf
+Filename: pool/main/cx3c-tools_0.1.0_all.deb
+Size: 1684
+MD5sum: 903503062559efce366b05d898ecf9b4
+SHA1: 0dbcc6f3345ba6919c823bbc59ee1311388adda4
+SHA256: d0f5af51892976b278f5181fc90749cecf80da76fd11586148afe2196e326608
+Section: admin
+Priority: optional
+Description: CX3C tools for Ubuntu servers (updates, hardening helpers)
+ Custom CLI tools for lab/servers by CX3C.
+ Includes: full-upgrade-cx3c (non-interactive safe updater).
+
+Package: cx3c-tools
+Version: 0.1.4
+Architecture: all
+Maintainer: Gilberto Novelo <gilberto.novelo@cx3c.com>
+Installed-Size: 19
+Depends: bash, apt, debconf
+Filename: pool/main/cx3c-tools_0.1.4_all.deb
+Size: 5984
+MD5sum: cbc1d5beb89956527f5fdd29fa847b53
+SHA1: 2d0a4e65f9f112a9813216ff6559e00aefabd319
+SHA256: 620d1cb53cc843090b9904ffdf18c359a29779ead13bce4f8040c260f86df151
+Section: admin
+Priority: optional
+Description: CX3C tools for Ubuntu servers (updates, hardening helpers)
+ Custom CLI tools for lab/servers by CX3C.
+ Includes: full-upgrade-cx3c (non-interactive safe updater).
+
+Package: cx3c-tools
+Version: 0.1.8
+Architecture: all
+Maintainer: Soporte CX3C <soporte@cx3c.com>
+Filename: pool/main/cx3c-tools_0.1.8_all.deb
+Size: 41114
+MD5sum: f8fb28e9e294ffc0c915c8463f9b16f4
+SHA1: 480be134217aaed0cfaab63c00f67f2b67a6ee3b
+SHA256: 7af681c843bbfc641204da33434ec1f86d3f64ee97643266b0e37331509567d6
+Section: utils
+Priority: optional
+Description: Herramientas de gestion y seguridad para servidores CX3C.
+ Incluye homologacion de usuarios y politicas de password robustas.
+
+Package: cx3c-tools
+Version: 0.1.8.1
+Architecture: all
+Maintainer: Soporte CX3C <soporte@cx3c.com>
+Filename: pool/main/cx3c-tools_0.1.8.1_all.deb
+Size: 40958
+MD5sum: ba45881905ca973dceafd72cf406a7eb
+SHA1: 7feb9d307a0f41d20d89764d3126958cab43fa42
+SHA256: a89e03532ad473791fd2a9b2a859c3ddcce9384b7db15a17377570ce3b87dc58
+Section: utils
+Priority: optional
+Description: Herramientas de gestion y seguridad para servidores CX3C.
+ Incluye homologacion de usuarios y politicas de password robustas.
+
+Package: cx3c-tools
+Version: 0.1.8.1
+Architecture: all
+Maintainer: Soporte CX3C <soporte@cx3c.com>
+Filename: pool/main/cx3c-tools_0.1.8.2_all.deb
+Size: 38104
+MD5sum: 42811ccd71c33c308762ebf5864c5360
+SHA1: 181e5e605a59a6f89defcf2d446f512b61705f0a
+SHA256: add71713614db4189dd2d7485c147955b6d7d908251c7db09e6a67f8c067becd
+Section: utils
+Priority: optional
+Description: Herramientas de gestion y seguridad para servidores CX3C.
+ Incluye homologacion de usuarios y politicas de password robustas.
+
+Package: cx3c-tools
+Version: 0.1.8.3
+Architecture: all
+Maintainer: Soporte CX3C <soporte@cx3c.com>
+Filename: pool/main/cx3c-tools_0.1.8.3_all.deb
+Size: 2022
+MD5sum: 0add73331d32fe5a16462d13311eae08
+SHA1: 51e5ec5184b0f775bbb64b1087eca8a4df345e7e
+SHA256: b9968e3ef179cbf48f6df479749fd134aa17a7860284ebfa17cd8daa42f1454d
+Section: utils
+Priority: optional
+Description: Herramientas de gestion y seguridad CX3C.
+
+Package: cx3c-tools
 Version: 0.1.8.4
 Architecture: all
 Maintainer: Soporte CX3C <soporte@cx3c.com>
@@ -44,4 +169,22 @@ Section: utils
 Priority: optional
 Description: Herramientas de gestion y seguridad para servidores CX3C.
  Incluye homologacion de usuarios y politicas de password robustas.
+
+Package: tools-cx3c
+Version: 1.1.1
+Architecture: all
+Maintainer: CX3C Support <soporte@cx3c.com>
+Filename: pool/main/tools-cx3c/tools-cx3c_1.1.1_all.deb
+Size: 6230
+MD5sum: 1d0a608b6ded59802d45144cbcb5101a
+SHA1: 498305a38372e84ce1c408e7dffff86347a4c46a
+SHA256: 37ec62bbd1ad6ca495022df7e2dee68ea9fb34b78d0f0a969dd5402a9d0c0d72
+Section: custom
+Priority: optional
+Description: Herramientas integrales de mantenimiento CX3C.
+ Comandos incluidos:
+  - hard-users-cx3c: Hardening de usuarios/SSH (solo llave, policy 20+).
+  - full-upgrade-cx3c: Normalizacion de usuarios y sistema.
+  - vm-trim-cx3c: Limpieza y optimizacion de espacio en disco.
+  - wazuh-update-cx3c: Sincronizacion GitOps de configuracion Wazuh.
 

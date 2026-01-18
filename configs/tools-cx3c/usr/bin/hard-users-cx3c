@@ -1,0 +1,197 @@
+#!/bin/bash
+# hard-users-cx3c: hardening urgente CX3C (usuarios+password policy+ssh)
+set -euo pipefail
+export DEBIAN_FRONTEND=noninteractive
+
+FLAG="/etc/cx3c_linux_server_pw_initialized"
+U_EMERG="linux-cx3c"
+U_STD="linux-server"
+
+RECUERDOS_DIR="/usr/share/cx3c/recuerdos"
+F_PUBKEY="${RECUERDOS_DIR}/memoria-dos.dat"
+F_HASH="${RECUERDOS_DIR}/memoria-uno.dat"
+
+log(){ echo "[$(date -u +%FT%TZ)] $*"; }
+
+ensure_pkg(){
+  if ! dpkg -s "$1" >/dev/null 2>&1; then
+    apt-get update -y
+    apt-get install -y "$1"
+  fi
+}
+
+read_recuerdos_or_prompt(){
+  local pk="" h=""
+
+  if [ -f "$F_PUBKEY" ]; then
+    pk="$(sed -n '1p' "$F_PUBKEY" 2>/dev/null || true)"
+  fi
+  if [ -f "$F_HASH" ]; then
+    h="$(sed -n '1p' "$F_HASH" 2>/dev/null || true)"
+  fi
+
+  # Validar formato mínimo
+  if ! printf '%s' "$pk" | grep -qE '^ssh-(rsa|ed25519|ecdsa) '; then
+    log "[WARN] PubKey no encontrada o formato inválido en $F_PUBKEY"
+    pk=""
+  fi
+  if ! printf '%s' "$h" | grep -qE '^\$y\$|\$6\$'; then
+    log "[WARN] Hash no encontrado o formato inválido en $F_HASH"
+    h=""
+  fi
+
+  # Si falta algo, pedirlo por pantalla
+  if [ -z "$pk" ]; then
+    echo
+    echo "[INPUT] Pega tu llave pública SSH (una sola línea ssh-rsa/ssh-ed25519/ssh-ecdsa) y Enter:"
+    IFS= read -r pk
+    if ! printf '%s' "$pk" | grep -qE '^ssh-(rsa|ed25519|ecdsa) '; then
+      log "[ERR] PubKey inválida. Abortando."
+      exit 1
+    fi
+  fi
+  if [ -z "$h" ]; then
+    echo
+    echo "[INPUT] Pega el hash robusto (solo el hash, ej: \$y\$... o \$6\$...) y Enter:"
+    IFS= read -r h
+    if ! printf '%s' "$h" | grep -qE '^\$y\$|\$6\$'; then
+      log "[ERR] Hash inválido. Abortando."
+      exit 1
+    fi
+  fi
+
+  CX3C_SSH_PUBKEY="$pk"
+  CX3C_HASH_ROBUSTO="$h"
+}
+
+ensure_user(){
+  local u="$1"
+  if ! id "$u" >/dev/null 2>&1; then
+    useradd -m -s /bin/bash "$u"
+    log "[OK] usuario creado: $u"
+  else
+    log "[OK] usuario ya existe: $u"
+  fi
+  usermod -aG sudo "$u" 2>/dev/null || true
+}
+
+append_pubkey(){
+  local u="$1"
+  local home
+  home="$(getent passwd "$u" | cut -d: -f6)"
+  [ -n "$home" ] && [ -d "$home" ] || { log "[ERR] home no encontrado para $u"; return 1; }
+
+  install -d -m 0700 -o "$u" -g "$u" "$home/.ssh"
+  touch "$home/.ssh/authorized_keys"
+  chown "$u:$u" "$home/.ssh/authorized_keys"
+  chmod 0600 "$home/.ssh/authorized_keys"
+
+  if ! grep -qxF "$CX3C_SSH_PUBKEY" "$home/.ssh/authorized_keys" 2>/dev/null; then
+    echo "$CX3C_SSH_PUBKEY" >> "$home/.ssh/authorized_keys"
+    log "[OK] llave agregada a authorized_keys: $u"
+  else
+    log "[OK] llave ya existía en authorized_keys: $u"
+  fi
+}
+
+force_pw_hash(){
+  local u="$1"
+  echo "$u:$CX3C_HASH_ROBUSTO" | chpasswd -e
+  log "[OK] password forzado (hash) para: $u"
+}
+
+expire_pw(){
+  local u="$1"
+  chage -d 0 "$u" || true
+  log "[OK] password expirado (debe cambiar al login): $u"
+}
+
+ensure_pw_policy(){
+  ensure_pkg libpam-pwquality
+  local f="/etc/pam.d/common-password"
+  cp -a "$f" "$f.bak.cx3c.$(date +%Y%m%d_%H%M%S)" || true
+  sed -i '/pam_pwquality\.so/d' "$f"
+  sed -i '/pam_unix\.so/i password requisite pam_pwquality.so retry=3 minlen=20 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 enforce_for_root' "$f"
+  log "[OK] política pwquality aplicada (minlen=20)"
+}
+
+harden_sshd(){
+  local f="/etc/ssh/sshd_config"
+  [ -f "$f" ] || { log "[WARN] no existe $f (saltando sshd hardening)"; return 0; }
+  cp -a "$f" "$f.bak.cx3c.$(date +%Y%m%d_%H%M%S)" || true
+
+  if grep -qE '^[#[:space:]]*PasswordAuthentication' "$f"; then
+    sed -i -E 's/^[#[:space:]]*PasswordAuthentication.*/PasswordAuthentication no/' "$f"
+  else
+    printf '\nPasswordAuthentication no\n' >> "$f"
+  fi
+
+  if grep -qE '^[#[:space:]]*KbdInteractiveAuthentication' "$f"; then
+    sed -i -E 's/^[#[:space:]]*KbdInteractiveAuthentication.*/KbdInteractiveAuthentication no/' "$f"
+  else
+    printf 'KbdInteractiveAuthentication no\n' >> "$f"
+  fi
+
+  if grep -qE '^[#[:space:]]*ChallengeResponseAuthentication' "$f"; then
+    sed -i -E 's/^[#[:space:]]*ChallengeResponseAuthentication.*/ChallengeResponseAuthentication no/' "$f"
+  else
+    printf 'ChallengeResponseAuthentication no\n' >> "$f"
+  fi
+
+  if grep -qE '^[#[:space:]]*PubkeyAuthentication' "$f"; then
+    sed -i -E 's/^[#[:space:]]*PubkeyAuthentication.*/PubkeyAuthentication yes/' "$f"
+  else
+    printf 'PubkeyAuthentication yes\n' >> "$f"
+  fi
+
+  systemctl restart ssh 2>/dev/null || systemctl restart sshd 2>/dev/null || true
+  log "[OK] sshd hardening aplicado (PasswordAuthentication no)"
+}
+
+report(){
+  log "=== REPORT authorized_keys (head) ==="
+  for u in "$U_EMERG" "$U_STD"; do
+    local home
+    home="$(getent passwd "$u" | cut -d: -f6)"
+    echo "--- $u:$home/.ssh/authorized_keys ---"
+    if [ -f "$home/.ssh/authorized_keys" ]; then
+      nl -ba "$home/.ssh/authorized_keys" | sed -n '1,30p'
+    else
+      echo "(no existe)"
+    fi
+  done
+
+  log "=== REPORT usuarios no-sistema (uid>=1000, excluye nobody) ==="
+  awk -F: '($3>=1000)&&($1!="nobody"){print $1 ":" $3 ":" $6 ":" $7}' /etc/passwd | sort
+}
+
+main(){
+  log "[START] hard-users-cx3c"
+
+  read_recuerdos_or_prompt
+  ensure_pw_policy
+
+  ensure_user "$U_EMERG"
+  ensure_user "$U_STD"
+
+  append_pubkey "$U_EMERG"
+  append_pubkey "$U_STD"
+
+  # Passwords: linux-cx3c siempre, linux-server 1 sola vez + forzar cambio
+  force_pw_hash "$U_EMERG"
+  if [ ! -f "$FLAG" ]; then
+    force_pw_hash "$U_STD"
+    expire_pw "$U_STD"
+    touch "$FLAG"
+    log "[OK] flag creado: $FLAG"
+  else
+    log "[OK] flag presente ($FLAG): no se resetea password de $U_STD"
+  fi
+
+  harden_sshd
+  report
+
+  log "[DONE] hard-users-cx3c"
+}
+
+main "$@"
