@@ -1,0 +1,17 @@
+Package: tools-cx3c
+Version: 1.0.3
+Architecture: all
+Maintainer: CX3C Support <soporte@cx3c.com>
+Filename: debs/tools-cx3c_1.0.3_all.deb
+Size: 4162
+MD5sum: 226268ae9ea8468110b20f9cea0abc36
+SHA1: 805c105e66903c896751983f8a1aed65c95dd3f5
+SHA256: 5b925aa893d5322b01db5a8fcc6cfaf541d6bfb73cae6c1a3ed3e2c478840ac4
+Section: custom
+Priority: optional
+Description: Herramientas integrales de mantenimiento CX3C.
+ Comandos incluidos:
+  - full-upgrade-cx3c: Normalizacion de usuarios y sistema.
+  - vm-trim-cx3c: Limpieza y optimizacion de espacio en disco.
+  - wazuh-update-cx3c: Sincronizacion GitOps de configuracion Wazuh.
+

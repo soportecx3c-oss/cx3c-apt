@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# vm-trim-cx3c: limpieza segura y TRIM para VMs Ubuntu/Debian
+# Uso:
+#   sudo vm-trim-cx3c         -> limpia + fstrim
+#   sudo vm-trim-cx3c --zero  -> además rellena con ceros si TRIM no aplica (más lento)
+set -euo pipefail
+export DEBIAN_FRONTEND=noninteractive
+
+ZERO_FILL=0
+[[ "${1:-}" == "--zero" ]] && ZERO_FILL=1
+
+need_sudo(){ [ "$(id -u)" -ne 0 ] && echo sudo || true; }
+SUDO="$(need_sudo)"
+info(){ echo "[+] $*"; }
+warn(){ echo "[!] $*" >&2; }
+
+info "Actualizando índices (por si limpiamos apt)..."
+$SUDO apt-get update -y || true
+
+info "Limpieza de APT..."
+$SUDO apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" autoremove -y || true
+$SUDO apt-get autoclean -y || true
+$SUDO apt-get clean -y || true
+
+info "Forzar rotación de logs..."
+if command -v logrotate >/dev/null 2>&1; then
+  $SUDO logrotate -f /etc/logrotate.conf || true
+fi
+
+info "Vaciar /tmp y /var/tmp..."
+$SUDO find /tmp /var/tmp -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+
+info "Vaciar caches comunes..."
+$SUDO rm -rf /var/cache/* 2>/dev/null || true
+$SUDO rm -rf /var/lib/apt/lists/* 2>/dev/null || true
+$SUDO rm -rf /var/lib/systemd/coredump/* 2>/dev/null || true
+
+# journals (conservamos 7 días por seguridad)
+if command -v journalctl >/dev/null 2>&1; then
+  info "Compactando journals (retener 7d)..."
+  $SUDO journalctl --vacuum-time=7d || true
+fi
+
+# snap (si existe)
+if command -v snap >/dev/null 2>&1; then
+  info "Purgando snaps antiguos (disabled)..."
+  $SUDO snap list --all | awk '/disabled/{print $1, $3}' | while read s r; do $SUDO snap remove "$s" --revision="$r" || true; done
+fi
+
+# cloud-init (si existe)
+if [ -d /var/log/cloud-init.log ] || [ -d /var/lib/cloud ]; then
+  info "Limpiando cloud-init..."
+  $SUDO rm -rf /var/lib/cloud/instance /var/log/cloud-init.log /var/log/cloud-init-output.log 2>/dev/null || true
+fi
+
+# fstrim en todos los puntos montados soportados
+if command -v fstrim >/dev/null 2>&1; then
+  info "Ejecutando fstrim en todos los sistemas de archivos..."
+  $SUDO fstrim -av || true
+else
+  warn "fstrim no está disponible; considere 'apt install util-linux' o usar --zero"
+fi
+
+# Zero-fill opcional (solo si se pidió)
+if [ "$ZERO_FILL" -eq 1 ]; then
+  warn "Relleno con ceros: puede tardar y crecer el vdisk temporalmente."
+  # intentar por cada FS principal
+  mapfile -t MPTS < <(awk '$3 ~ /^(ext[234]|xfs|btrfs)$/ {print $2}' /proc/mounts | sort -u)
+  for m in "${MPTS[@]}"; do
+    # evitar montajes especiales
+    [[ "$m" == "/" || "$m" =~ ^/home|^/var|^/opt|^/srv ]] || continue
+    info "Zero-fill en $m ..."
+    $SUDO bash -c "dd if=/dev/zero of='$m/zerofill' bs=16M status=none || true; sync; rm -f '$m/zerofill'; sync" || true
+  done
+fi
+
+info "Hecho. Sugerencia: programa un TRIM mensual con cron."
+

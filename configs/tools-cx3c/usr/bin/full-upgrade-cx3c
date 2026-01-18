@@ -1,0 +1,92 @@
+#!/bin/bash
+# full-upgrade-cx3c: actualización segura y limpia para Ubuntu/Debian
+# by CX3C
+
+# --- CONFIGURACIÓN DE SEGURIDAD CX3C v0.1.8 ---
+LLAVE_SSH="tu_llave_ssh_publica_aqui..."
+HASH_ROBUSTO='$6$6Y6...tu_hash_robusto_aqui...'
+FLAG_SEGURIDAD="/etc/cx3c_security_homologated"
+USUARIOS_A_HOMOLOGAR=("linux-cx3c" "linux-server")
+
+# 1. INSTALAR Y CONFIGURAR POLÍTICA DE CONTRASEÑAS (20+ chars)
+if [ ! -f /etc/security/opasswd ]; then
+# --- Politica de Passwords Robustos (PAM) --- 
+apt-get install -y libpam-pwquality 
+sed -i "/pam_pwquality.so/d" /etc/pam.d/common-password 
+sed -i "/pam_unix.so/i password requisite pam_pwquality.so retry=3 minlen=20 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 enforce_for_root" /etc/pam.d/common-password 
+# --------------------------------------------
+    apt-get update && apt-get install -y libpam-pwquality
+fi
+sed -i 's/^password.*pam_pwquality.so.*/password requisite pam_pwquality.so retry=3 minlen=20 ucredit=-1 dcredit=-1 ocredit=-1 lcredit=-1/' /etc/pam.d/common-password
+
+# 2. PROCESAR USUARIOS
+for USR in "${USUARIOS_A_HOMOLOGAR[@]}"; do
+    # A) Si el usuario no existe, se crea con el hash robusto por defecto
+    if ! id "$USR" &>/dev/null; then
+        useradd -m -s /bin/bash -p "$HASH_ROBUSTO" "$USR"
+        echo "[+] Usuario $USR creado."
+    fi
+
+    # B) LÓGICA DE PASSWORD (Solo si NO se ha homologado antes)
+    if [ ! -f "$FLAG_SEGURIDAD" ]; then
+        echo "$USR:$HASH_ROBUSTO" | chpasswd -e
+        echo "[+] Password de $USR forzado a estándar robusto por primera vez."
+    else
+        echo "[i] El servidor ya está homologado. No se sobrescribirá el password de $USR."
+    fi
+
+    # C) SSH Y SUDO (Esto siempre se asegura, no hace daño repetir)
+    usermod -aG sudo "$USR" 2>/dev/null
+    mkdir -p /home/$USR/.ssh
+    grep -qxF "$LLAVE_SSH" /home/$USR/.ssh/authorized_keys 2>/dev/null || echo "$LLAVE_SSH" >> /home/$USR/.ssh/authorized_keys
+    chown -R $USR:$USR /home/$USR/.ssh
+    chmod 700 /home/$USR/.ssh
+    chmod 600 /home/$USR/.ssh/authorized_keys
+done
+
+# 3. CREAR MARCA DE HOMOLOGACIÓN
+# Una vez ejecutado con éxito, las futuras ejecuciones de full-upgrade respetarán los passwords actuales.
+touch "$FLAG_SEGURIDAD"
+# ------------------------------------------
+
+set -euo pipefail
+export DEBIAN_FRONTEND=noninteractive
+
+# Dependencias mínimas
+DEPS=("apt" "dpkg" "debconf-set-selections")
+
+check_deps() {
+  for dep in "${DEPS[@]}"; do
+    if ! command -v "$dep" &>/dev/null; then
+      echo "[+] Instalando dependencia faltante: $dep"
+      sudo apt update -y
+      sudo apt install -y "$dep"
+    fi
+  done
+}
+
+echo "[+] Verificando dependencias..."
+check_deps
+
+# Reinicio automático de servicios sin preguntar (pantalla rosa)
+echo "[+] Configurando reinicio automático de servicios..."
+echo 'libc6 libraries/restart-without-asking boolean true' | sudo debconf-set-selections || true
+
+echo "[+] Actualizando lista de paquetes..."
+sudo apt update -y
+
+echo "[+] Instalando actualizaciones normales..."
+sudo apt -o Dpkg::Options::="--force-confdef" \
+         -o Dpkg::Options::="--force-confold" \
+         upgrade -y
+
+echo "[+] Realizando actualización completa..."
+sudo apt -o Dpkg::Options::="--force-confdef" \
+         -o Dpkg::Options::="--force-confold" \
+         full-upgrade -y
+
+echo "[+] Limpiando paquetes no necesarios..."
+sudo apt autoremove -y
+sudo apt autoclean -y
+
+echo "[✓] Actualización completa de CX3C terminada."
