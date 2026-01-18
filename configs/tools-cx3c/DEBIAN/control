@@ -1,5 +1,5 @@
 Package: tools-cx3c
-Version: 1.1.2
+Version: 1.1.3
 Section: custom
 Priority: optional
 Architecture: all
@@ -10,3 +10,4 @@ Description: Herramientas integrales de mantenimiento CX3C.
   - full-upgrade-cx3c: Normalizacion de usuarios y sistema.
   - vm-trim-cx3c: Limpieza y optimizacion de espacio en disco.
   - wazuh-update-cx3c: Sincronizacion GitOps de configuracion Wazuh.
+
