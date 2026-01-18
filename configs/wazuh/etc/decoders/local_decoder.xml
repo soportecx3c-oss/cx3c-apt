@@ -1,0 +1,29 @@
+<decoder name="local_decoder_example">
+  <program_name>local_decoder_example</program_name>
+</decoder>
+
+<decoder name="ipfw">
+  <program_name>^ipfw$</program_name>
+</decoder>
+
+<decoder name="ipfw_fields">
+  <parent>ipfw</parent>
+  <regex offset="after_parent">([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)\s(\S+)</regex>
+  <order>public_ip,action</order>
+</decoder>
+
+<decoder name="pfsense-base">
+  <program_name>php-cgi</program_name>
+</decoder>
+
+<decoder name="pfsense-easyrule-blocked">
+  <parent>pfsense-base</parent>
+  <regex>easyrule: Configuration Change: \(\S+\): Blocked (\S+) via EasyRule</regex>
+  <order>srcip</order>
+</decoder>
+
+<decoder name="pfsense-easyrule-unblocked">
+  <parent>pfsense-base</parent>
+  <regex>easyrule: Configuration Change: \(\S+\): Unblocked (\S+) via EasyRule</regex>
+  <order>srcip</order>
+</decoder>
