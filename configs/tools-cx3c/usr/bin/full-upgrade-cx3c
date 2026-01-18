@@ -30,9 +30,8 @@ echo "libc6 libraries/restart-without-asking boolean true" | debconf-set-selecti
 
 # Evitar prompts de needrestart (no-interactivo)
 if [ -f /etc/needrestart/needrestart.conf ]; then
-  # a=auto (no preguntar). Si la línea existe comentada o activa, se normaliza.
-  sed -i -E "s|^[#[:space:]]*\\$nrconf\\{restart\\}[[:space:]]*=[[:space:]]*.*|\\$nrconf{restart} = \"a\";|" \
-    /etc/needrestart/needrestart.conf || true
+  # Forzar modo automatico sin que bash interprete  (set -u safe)
+  sed -i -E 's|^[#[:space:]]*\\{restart\}.*|\ = "a";|' /etc/needrestart/needrestart.conf || true
 fi
 
 echo "[+] Actualizando lista de paquetes..."
