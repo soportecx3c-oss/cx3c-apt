@@ -46,14 +46,14 @@ Description: Herramientas de gestion y seguridad para servidores CX3C.
  Incluye homologacion de usuarios y politicas de password robustas.
 
 Package: tools-cx3c
-Version: 1.0.6
+Version: 1.0.7
 Architecture: all
 Maintainer: CX3C Support <soporte@cx3c.com>
-Filename: ./debs/tools-cx3c_1.0.6_all.deb
-Size: 4162
-MD5sum: 9a0184327c3b3b3d022eaed2169ac545
-SHA1: 2a907380fc8a406ea57eef2539ead0b02e198e16
-SHA256: b4035b9e2f1b7c288b42d706d9ae42ab2fb8fd2dd0f3f373db7f95122b2b5be3
+Filename: ./debs/tools-cx3c_1.0.7_all.deb
+Size: 4160
+MD5sum: 612560be4c00a2799136220ad985ee82
+SHA1: 52920da910f3beb84feb4de3bf01d75ca0aa3e82
+SHA256: 8c2d32f24b8ff44e482089fa23ff127fdbf6bdbdf1b712e07efa4a21e4479ad0
 Section: custom
 Priority: optional
 Description: Herramientas integrales de mantenimiento CX3C.
