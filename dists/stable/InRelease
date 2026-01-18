@@ -1,27 +1,41 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Date: Sun, 18 Jan 2026 23:31:52 +0000
+Origin: CX3C
+Label: CX3C APT Repo
+Suite: stable
+Codename: stable
+Architectures: amd64 all
+Components: main
+Description: CX3C internal packages
 MD5Sum:
- 9b5ad9931cbf12557fd1ac4669c4eede               38 Release
- 88b043bca4194d59cf0696cabcff13a9             2883 main/binary-all/Packages.gz
- 88b043bca4194d59cf0696cabcff13a9             2883 main/binary-amd64/Packages.gz
+ 875de9e75317d065a0becf05e04d0180             1352 Release
+ d47098256c81c70de5594b82da74f46a            12038 main/binary-all/Packages
+ df1a76c61fe9ede31e8fac7d4c5c0cb8             2995 main/binary-all/Packages.gz
+ d47098256c81c70de5594b82da74f46a            12038 main/binary-amd64/Packages
+ df1a76c61fe9ede31e8fac7d4c5c0cb8             2995 main/binary-amd64/Packages.gz
 SHA1:
- 5195da27307af267a86de7becceec9f1953c17b3               38 Release
- 9694704c18ce229e12dd422e4cbe68dd92bdaa04             2883 main/binary-all/Packages.gz
- 9694704c18ce229e12dd422e4cbe68dd92bdaa04             2883 main/binary-amd64/Packages.gz
+ 4a8d29da5f5cfc1364aa1d827cb154cb4ea4c473             1352 Release
+ 0d6d22200b9c75d4b62cede4e968273313fa49b1            12038 main/binary-all/Packages
+ 74b0ed7c54ac1444bc3fb00847ac365b129111de             2995 main/binary-all/Packages.gz
+ 0d6d22200b9c75d4b62cede4e968273313fa49b1            12038 main/binary-amd64/Packages
+ 74b0ed7c54ac1444bc3fb00847ac365b129111de             2995 main/binary-amd64/Packages.gz
 SHA256:
- 12447bb796d860aa71d56f1e74526822d4e0ae87419686b9417b1f2b972ffc83               38 Release
- 7817fb3c10f039ad2e57a9c735f7d505e1f13ee12d8a34824b280830b48996b1             2883 main/binary-all/Packages.gz
- 7817fb3c10f039ad2e57a9c735f7d505e1f13ee12d8a34824b280830b48996b1             2883 main/binary-amd64/Packages.gz
+ 0d4372e962616d937aedf65be02d479741a4ead0f15b7eaaff48e5727fa088f3             1352 Release
+ a91756a1d6c38a14ea5da8305f4cc2cf3ce6e228528e33d814933765f7265205            12038 main/binary-all/Packages
+ f5de53dbb30941b86e01ec84d773baff235bd161a7e344a11909034842de4b4a             2995 main/binary-all/Packages.gz
+ a91756a1d6c38a14ea5da8305f4cc2cf3ce6e228528e33d814933765f7265205            12038 main/binary-amd64/Packages
+ f5de53dbb30941b86e01ec84d773baff235bd161a7e344a11909034842de4b4a             2995 main/binary-amd64/Packages.gz
 SHA512:
- 221cd359389562349c62f3bfa3505833275d000ade3f9dd4312f698879ad04cb6db24e74d90f8139465f63751754da01d517930eb8c0ed9b6febd04aa050f2ca               38 Release
- 202ed9b5a5c498adea5df2a5c4e39bd3bb7d1271ead706596e1db476c39617ab3eb848040180d33acdf6c4b05a2f4b0c9c745457688b7b399df57b97479ab1a0             2883 main/binary-all/Packages.gz
- 202ed9b5a5c498adea5df2a5c4e39bd3bb7d1271ead706596e1db476c39617ab3eb848040180d33acdf6c4b05a2f4b0c9c745457688b7b399df57b97479ab1a0             2883 main/binary-amd64/Packages.gz
+ 55f492af96e4617d7c46f8b5b52c3b294c454f75476bf3dc37f2b892223bcfe81dd0d3017dd2af3442ec9b330288411a64e65677a6f122aa4af3c959d35cd339             1352 Release
+ 46ee71a1aedfeee894ac7d99d3a9d84be50edd52289292b1b10515d4e51e2a6a710c5239c2b0395c4f4780065a7344d12d2829a2451edcdb0a7b2b850b1dcc20            12038 main/binary-all/Packages
+ ad5c8f61e6fa74d4507e30e05426a60c449156457bde4bb462db437cadc756264066864340d6b6c50e1c2f5c4cb2c5f8b222d4b18f9f6e3b89e6b41f159eff5f             2995 main/binary-all/Packages.gz
+ 46ee71a1aedfeee894ac7d99d3a9d84be50edd52289292b1b10515d4e51e2a6a710c5239c2b0395c4f4780065a7344d12d2829a2451edcdb0a7b2b850b1dcc20            12038 main/binary-amd64/Packages
+ ad5c8f61e6fa74d4507e30e05426a60c449156457bde4bb462db437cadc756264066864340d6b6c50e1c2f5c4cb2c5f8b222d4b18f9f6e3b89e6b41f159eff5f             2995 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaW1tdAAKCRAa94K9aTl3
-9Mx7AP9Q6YT0nLMGJAqwiEd2189woZkhjWVWw0URgU75FgsHtQD9EqNoMyZMSRKn
-4+hom4qNK4lG/Aeq1IRUvsDAbEG4jQ0=
-=6c/S
+iHUEARYKAB0WIQTCeBN8FXNRBD+Uj1Qa94K9aTl39AUCaW1wHgAKCRAa94K9aTl3
+9OswAP95K8I3xDIoqi4kLlG1CCSIm5GNOlZ0JfG9KfjvR5MMjQD+NK85eSdJnQi0
+9HA1mM2+DMH9nTr0rfBw5qWo6r/u2wo=
+=OZfY
 -----END PGP SIGNATURE-----

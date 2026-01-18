@@ -28,10 +28,13 @@ check_deps
 echo "[+] Configurando reinicio automático de servicios..."
 echo "libc6 libraries/restart-without-asking boolean true" | debconf-set-selections || true
 
+
 # Evitar prompts de needrestart (no-interactivo)
-if [ -f /etc/needrestart/needrestart.conf ]; then
-  # Forzar modo automatico sin que bash interprete  (set -u safe)
-  sed -i -E 's|^[#[:space:]]*\\{restart\}.*|\ = "a";|' /etc/needrestart/needrestart.conf || true
+if command -v needrestart >/dev/null 2>&1; then
+  install -d -m 0755 /etc/needrestart/conf.d
+  cat > /etc/needrestart/conf.d/99-cx3c.conf <<EOF
+$nrconf{restart} = "a";
+EOF
 fi
 
 echo "[+] Actualizando lista de paquetes..."
