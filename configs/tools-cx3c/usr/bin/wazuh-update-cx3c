@@ -23,7 +23,7 @@ check_paths(){
 
 mktemp_repo(){
   REPO_TEMP="$(mktemp -d /tmp/cx3c-repo.XXXXXX)"
-  trap 'rm -rf "$REPO_TEMP" >/dev/null 2>&1 || true' EXIT
+  trap 'log "[INFO] cleanup: ${REPO_TEMP:-}"; timeout 10s rm -rf "${REPO_TEMP:-}" >/dev/null 2>&1 || log "[WARN] cleanup no completado: ${REPO_TEMP:-}"' EXIT
 }
 
 clone_repo(){

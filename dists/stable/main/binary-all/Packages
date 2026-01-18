@@ -193,10 +193,10 @@ Version: 1.1.2
 Architecture: all
 Maintainer: CX3C Support <soporte@cx3c.com>
 Filename: pool/main/tools-cx3c/tools-cx3c_1.1.2_all.deb
-Size: 7274
-MD5sum: fcef8bbfdc663c4dd206da1b9c590511
-SHA1: e1460c6e74497d1192a52594196c695dafa8b6a2
-SHA256: fccef3256d409761a9a0b0ec6d8be1c736751dcac21d8272f0a2624ccd11be6d
+Size: 7330
+MD5sum: e801c8d54234a715b6c165b4ebaf20b0
+SHA1: ac40dda8dc5cf2be05a16cfc8df11b2e83a34ad4
+SHA256: e9f828f284efb32010295717dd310dec83cb59b842ccd2581a5b6bc80c2e969a
 Section: custom
 Priority: optional
 Description: Herramientas integrales de mantenimiento CX3C.
