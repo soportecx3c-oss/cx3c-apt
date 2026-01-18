@@ -3,6 +3,7 @@
 # by CX3C
 
 # --- CONFIGURACIÓN DE SEGURIDAD CX3C v0.1.8 ---
+set -euo pipefail
 LLAVE_SSH="tu_llave_ssh_publica_aqui..."
 HASH_ROBUSTO='$6$6Y6...tu_hash_robusto_aqui...'
 FLAG_SEGURIDAD="/etc/cx3c_security_homologated"
@@ -49,7 +50,6 @@ done
 touch "$FLAG_SEGURIDAD"
 # ------------------------------------------
 
-set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
 # Dependencias mínimas
@@ -73,6 +73,13 @@ echo "[+] Configurando reinicio automático de servicios..."
 echo 'libc6 libraries/restart-without-asking boolean true' | sudo debconf-set-selections || true
 
 echo "[+] Actualizando lista de paquetes..."
+
+# Evitar prompts de needrestart (no-interactivo)
+if [ -f /etc/needrestart/needrestart.conf ]; then
+  # a=auto (no preguntar). Si la línea existe comentada o activa, se normaliza.
+  sed -i -E "s|^[#[:space:]]*\$nrconf\{restart\}[[:space:]]*=[[:space:]]*.*|\$nrconf{restart} = \"a\";|" /etc/needrestart/needrestart.conf || true
+fi
+
 sudo apt update -y
 
 echo "[+] Instalando actualizaciones normales..."

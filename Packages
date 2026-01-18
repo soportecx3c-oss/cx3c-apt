@@ -1,59 +1,12 @@
-Package: apdr-cx3c
-Version: 0.9.1
-Architecture: all
-Maintainer: Soporte CX3C <soportecx3c@example.com>
-Depends: python3 (>= 3.8), python3-venv, ca-certificates
-Filename: ./pool/main/apdr-cx3c_0.9.1_all.deb
-Size: 191698
-MD5sum: 6e4fcde3ef66dac3c1ed68022bbe9ac4
-SHA1: 4a0e734c970dd41807eb5f8169a7d670edd3af1c
-SHA256: 021f0311d1170c1a8ad5fce4ae37a371e9acc6d6f3117b09ff9ec104ffeabcd6
-Section: admin
-Priority: optional
-Description: APDR-CX3C MDR automation daemon (TheHive, Cortex, MISP, Wazuh)
- MDR automation daemon integrating TheHive, Cortex, MISP and Wazuh for sovereign SOAR/MDR workflows.
-
-Package: cx3c-pve-tools
-Version: 0.2.1
-Architecture: all
-Maintainer: CX3C APT Repo <repo@cx3c.com>
-Installed-Size: 17
-Depends: bash, apt
-Filename: ./pool/main/cx3c-pve-tools/cx3c-pve-tools_0.2.1_all.deb
-Size: 4174
-MD5sum: ee37619eb357d0e64c2bdbc4e4c49913
-SHA1: 75071355818d86a6fbad74cef64a07d90695a1a5
-SHA256: 346a05226b156832c33c435bb680cd3a906470f75d439e0b9c787527db609e4d
-Section: admin
-Priority: optional
-Homepage: https://soportecx3c-oss.github.io/cx3c-apt
-Description: Utilidades CX3C para Proxmox VE y Debian/Ubuntu
- Comandos operativos para nodos PVE y derivados. Incluye:
-  - pve-full-upgrade-cx3c: actualización completa no interactiva.
-
-Package: cx3c-tools
-Version: 0.1.8.4
-Architecture: all
-Maintainer: Soporte CX3C <soporte@cx3c.com>
-Filename: ./pool/main/cx3c-tools_0.1.8.4_all.deb
-Size: 2164
-MD5sum: 3f8f9bbc299da9da565ff98497b6e1ed
-SHA1: 8855c21f1f54d025377be0ed0a911d68b0c37c02
-SHA256: b9e47280115eb93b767c1b68cbbfac0477726db338d16ef8fb24a9711ac16d9b
-Section: utils
-Priority: optional
-Description: Herramientas de gestion y seguridad para servidores CX3C.
- Incluye homologacion de usuarios y politicas de password robustas.
-
 Package: tools-cx3c
-Version: 1.0.7
+Version: 1.1.0
 Architecture: all
 Maintainer: CX3C Support <soporte@cx3c.com>
-Filename: ./debs/tools-cx3c_1.0.7_all.deb
-Size: 4160
-MD5sum: 612560be4c00a2799136220ad985ee82
-SHA1: 52920da910f3beb84feb4de3bf01d75ca0aa3e82
-SHA256: 8c2d32f24b8ff44e482089fa23ff127fdbf6bdbdf1b712e07efa4a21e4479ad0
+Filename: debs/tools-cx3c_1.1.0_all.deb
+Size: 3854
+MD5sum: 07411e2f9c1b2a28193a36ed59290ef3
+SHA1: 507870c9fe662da0df643693658564c647a87e7f
+SHA256: 94c79c77d06814847c744ae55f20a9ba2080f0ee171dcaf76f5d68991e950614
 Section: custom
 Priority: optional
 Description: Herramientas integrales de mantenimiento CX3C.
