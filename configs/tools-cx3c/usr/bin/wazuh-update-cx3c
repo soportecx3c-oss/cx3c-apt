@@ -1,0 +1,60 @@
+#!/bin/bash
+# SCRIPT DE ACTUALIZACIÓN INTEGRAL Y GITOPS - CX3C v5.1
+
+REPO_RAW="https://raw.githubusercontent.com/soportecx3c-oss/cx3c-apt/main/configs/wazuh"
+WAZUH_PATH="/var/ossec"
+TEMP_DIR="/tmp/wazuh_sync"
+
+echo "======================================================"
+echo "   CX3C - ACTUALIZACIÓN DE SISTEMA Y CONFIGURACIÓN"
+echo "======================================================"
+
+# --- PARTE 1: Actualización de Paquetes ---
+echo "[+] 1/3: Actualizando repositorios y paquetes del SO..."
+apt-get update && apt-get upgrade -y
+
+# --- PARTE 2: Sincronización de Configuración (GitOps) ---
+echo "[+] 2/3: Sincronizando configuración maestra desde GitHub..."
+mkdir -p "$TEMP_DIR"
+
+# Descarga de archivos desde la ruta homologada en el repo
+curl -s -f -o "$TEMP_DIR/ossec.conf" "$REPO_RAW/etc/ossec.conf"
+curl -s -f -o "$TEMP_DIR/local_rules.xml" "$REPO_RAW/etc/rules/local_rules.xml"
+curl -s -f -o "$TEMP_DIR/local_decoder.xml" "$REPO_RAW/etc/decoders/local_decoder.xml"
+curl -s -f -o "$TEMP_DIR/agent.conf" "$REPO_RAW/etc/shared/default/agent.conf"
+
+if [ $? -ne 0 ]; then
+    echo "[!] Error: No se pudo descargar la configuración de GitHub."
+else
+    echo "[+] Validando integridad del XML..."
+    $WAZUH_PATH/bin/wazuh-analysisd -t -c "$TEMP_DIR/ossec.conf" > /dev/null 2>&1
+    
+    if [ $? -eq 0 ]; then
+        echo "[✓] Configuración validada. Aplicando..."
+        cp "$TEMP_DIR/ossec.conf" "$WAZUH_PATH/etc/ossec.conf"
+        cp "$TEMP_DIR/local_rules.xml" "$WAZUH_PATH/etc/rules/local_rules.xml"
+        cp "$TEMP_DIR/local_decoder.xml" "$WAZUH_PATH/etc/decoders/local_decoder.xml"
+
+        # Propagación a grupos en shared/
+        for group_dir in "$WAZUH_PATH"/etc/shared/*; do
+            if [ -d "$group_dir" ]; then
+                cp "$TEMP_DIR/agent.conf" "$group_dir/agent.conf"
+                chown wazuh:wazuh "$group_dir/agent.conf"
+                chmod 660 "$group_dir/agent.conf"
+            fi
+        done
+        chown root:wazuh "$WAZUH_PATH/etc/ossec.conf"
+        chmod 660 "$WAZUH_PATH/etc/ossec.conf"
+    else
+        echo "[!] ERROR: La configuración de GitHub no es válida. No se aplicó."
+    fi
+fi
+
+# --- PARTE 3: Reinicio y Limpieza ---
+echo "[+] 3/3: Reiniciando servicios y limpieza..."
+$WAZUH_PATH/bin/wazuh-control restart
+rm -rf "$TEMP_DIR"
+
+echo "======================================================"
+echo "   PROCESO COMPLETADO EXITOSAMENTE"
+echo "======================================================"
