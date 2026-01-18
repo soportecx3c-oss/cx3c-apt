@@ -1,24 +1,31 @@
-Date: Sun, 18 Jan 2026 13:19:22 +0000
+Architectures: amd64 all
+Codename: stable
+Components: main
+Date: Sun, 18 Jan 2026 13:49:42 +0000
+Description: Repositorio de herramientas CX3C
+Label: CX3C Repository
+Origin: Soporte CX3C
+Suite: stable
 MD5Sum:
- d07b987c4116fef12835fdc8c8280c54               38 Release
+ fd34c76f616d573cc1987c39b8640836              201 Release
  d1873ccb31bc4bdd40af533a7121ab24             6779 main/binary-all/Packages
  17d6329dc4137d1ab9a106eb71927846             2233 main/binary-all/Packages.gz
  d1873ccb31bc4bdd40af533a7121ab24             6779 main/binary-amd64/Packages
  17d6329dc4137d1ab9a106eb71927846             2233 main/binary-amd64/Packages.gz
 SHA1:
- 10b4c60c1b542618d1dae42800ede155f88c4382               38 Release
+ a32cf86f0aa8ad2ef055c1798357c670b145a887              201 Release
  37d3a222c7d023c50690345af295d271a017d2c2             6779 main/binary-all/Packages
  1c01bf793f02e665ffa31f592c92d6d3ac4c5d43             2233 main/binary-all/Packages.gz
  37d3a222c7d023c50690345af295d271a017d2c2             6779 main/binary-amd64/Packages
  1c01bf793f02e665ffa31f592c92d6d3ac4c5d43             2233 main/binary-amd64/Packages.gz
 SHA256:
- fc2429338922c39239327bf966ca23c96a789543c3340c9b2063702569037994               38 Release
+ 34850ef708da6054ada549cd098fb1ecc78cb5b15bf29ee4ac7095ad6352cbca              201 Release
  49d4e29d20a759ea3ad7336a9ad09b40a7ff00161f2d7512a7de84cce8d4285d             6779 main/binary-all/Packages
  e30994d334af3a176a388dd1d9cb2ce2fba1bc039a8b46a5e24517f3c46f8774             2233 main/binary-all/Packages.gz
  49d4e29d20a759ea3ad7336a9ad09b40a7ff00161f2d7512a7de84cce8d4285d             6779 main/binary-amd64/Packages
  e30994d334af3a176a388dd1d9cb2ce2fba1bc039a8b46a5e24517f3c46f8774             2233 main/binary-amd64/Packages.gz
 SHA512:
- ee1a38f3429055f896495757186bb3ea539a49bafbfdb6620b4a5f55c639253e65cbcd7daa04891fcfe4332293fb1b0b3ba64af174a095e1ce0fdafd22e2d181               38 Release
+ e427064e254822c280653c3930746379ffc5dfefa418013726a7031ed8aaee22f015b493488b2b606051bacb3ecc0e84e15df8f8a67b817f331c738db042c473              201 Release
  8312e00a0d258bd81be5b75512f2a57b5c757453002ef654b82e4965ff5a6b998d339535367ae7cae745b58f553d2e0ecdcb992549b8645af1987a0c2f17c292             6779 main/binary-all/Packages
  81592959a34c39ee97df96e1672f581952d5f2b4f5e4eb24c851a4e9833e6cf964a5c616e3b5872869df25e91d9c2f31cf2e1d2113201f90f175832cf4fbc4f5             2233 main/binary-all/Packages.gz
  8312e00a0d258bd81be5b75512f2a57b5c757453002ef654b82e4965ff5a6b998d339535367ae7cae745b58f553d2e0ecdcb992549b8645af1987a0c2f17c292             6779 main/binary-amd64/Packages
